@@ -41,7 +41,7 @@ export default function Footer() {
             </p>
             <span
               onClick={handleDisabledClick}
-              className="text-warm-200/50 text-lg font-medium opacity-50 cursor-not-allowed pointer-events-none"
+              className="text-warm-200 hover:text-white transition-colors text-lg font-medium pointer-events-auto"
             >
               079 337 82 59
             </span>
@@ -66,7 +66,7 @@ export default function Footer() {
                 >
                   <span
                     onClick={handleDisabledClick}
-                    className="text-warm-300/50 text-lg opacity-50 cursor-not-allowed pointer-events-none"
+                    className="text-warm-300 hover:text-white transition-colors text-lg pointer-events-auto"
                   >
                     {item.label}
                   </span>

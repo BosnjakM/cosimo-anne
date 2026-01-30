@@ -134,12 +134,14 @@ export default function Menu() {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <span
+          <motion.span
             onClick={handleDisabledClick}
-            className="inline-block bg-warm-600/50 text-white/50 px-8 md:px-12 py-5 md:py-6 rounded-full font-semibold text-lg md:text-xl transition-colors duration-300 shadow-2xl opacity-50 cursor-not-allowed pointer-events-none"
+            className="inline-block bg-warm-600 text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-semibold text-lg md:text-xl hover:bg-warm-700 transition-colors duration-300 shadow-2xl pointer-events-auto"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
           >
             Vollständige Speisekarte anfragen
-          </span>
+          </motion.span>
         </motion.div>
       </div>
     </section>

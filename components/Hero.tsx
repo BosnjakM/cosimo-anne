@@ -84,18 +84,22 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span
+              <motion.span
                 onClick={handleDisabledClick}
-                className="bg-warm-600/50 text-white/50 px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full font-semibold text-lg sm:text-xl transition-colors duration-300 shadow-2xl opacity-50 cursor-not-allowed pointer-events-none"
+                className="bg-warm-600 text-white px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full font-semibold text-lg sm:text-xl hover:bg-warm-700 transition-colors duration-300 shadow-2xl relative overflow-hidden group pointer-events-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Jetzt reservieren
-              </span>
-              <span
+              </motion.span>
+              <motion.span
                 onClick={handleDisabledClick}
-                className="bg-white/5 backdrop-blur-md text-white/50 px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full font-semibold text-lg sm:text-xl transition-colors duration-300 border-2 border-white/15 opacity-50 cursor-not-allowed pointer-events-none"
+                className="bg-white/10 backdrop-blur-md text-white px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full font-semibold text-lg sm:text-xl hover:bg-white/20 transition-colors duration-300 border-2 border-white/30 relative overflow-hidden group pointer-events-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Speisekarte entdecken
-              </span>
+              </motion.span>
             </motion.div>
           </motion.div>
         </div>

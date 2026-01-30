@@ -36,6 +36,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
+            whileHover={{ y: -5 }}
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 font-display">
               Pizzeria Cosimo & Anna
@@ -60,8 +61,8 @@ export default function Contact() {
                   {item.link ? (
                     <span
                       onClick={handleDisabledClick}
-                      className={`text-lg md:text-xl opacity-50 cursor-not-allowed pointer-events-none ${
-                        item.highlight ? 'text-warm-400/50 font-semibold' : 'text-white/50'
+                      className={`text-lg md:text-xl hover:text-warm-300 transition-colors pointer-events-auto ${
+                        item.highlight ? 'text-warm-400 font-semibold' : 'text-white'
                       }`}
                     >
                       {item.value.split('\n').map((line, i) => (
@@ -100,6 +101,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
+            whileHover={{ scale: 1.01 }}
           >
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-white rounded-full blur-3xl"></div>
@@ -126,12 +128,14 @@ export default function Contact() {
                 Rufen Sie uns an und reservieren Sie Ihren Tisch oder bestellen
                 Sie Ihr Take Away.
               </motion.p>
-              <span
+              <motion.span
                 onClick={handleDisabledClick}
-                className="bg-white/50 text-warm-600/50 px-8 md:px-12 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl lg:text-2xl transition-colors duration-300 text-center shadow-2xl relative overflow-hidden group block opacity-50 cursor-not-allowed pointer-events-none"
+                className="bg-white text-warm-600 px-8 md:px-12 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl lg:text-2xl hover:bg-cream-50 transition-colors duration-300 text-center shadow-2xl relative overflow-hidden group block pointer-events-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
                 079 337 82 59 anrufen
-              </span>
+              </motion.span>
             </div>
           </motion.div>
         </div>

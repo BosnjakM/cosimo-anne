@@ -39,15 +39,20 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0">
+          <motion.div
+            className="flex-shrink-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <span
-              className={`text-2xl font-bold font-display transition-colors opacity-50 cursor-not-allowed pointer-events-none ${
+              onClick={handleDisabledClick}
+              className={`text-2xl font-bold font-display transition-colors pointer-events-auto ${
                 isScrolled ? 'text-white' : 'text-white'
               }`}
             >
               Cosimo & Anna
             </span>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:space-x-10">
@@ -59,35 +64,44 @@ export default function Header() {
                 transition={{ delay: index * 0.1 + 0.3 }}
               >
                 <span
-                  className={`transition-colors duration-200 font-medium text-lg relative group opacity-50 cursor-not-allowed pointer-events-none ${
-                    isScrolled ? 'text-white/90' : 'text-white/90'
+                  onClick={handleDisabledClick}
+                  className={`transition-colors duration-200 font-medium text-lg relative group pointer-events-auto ${
+                    isScrolled ? 'text-white/90 hover:text-warm-400' : 'text-white/90 hover:text-warm-300'
                   }`}
                 >
                   {item.label}
+                  <motion.span
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-400 group-hover:w-full transition-all duration-300"
+                    initial={false}
+                  />
                 </span>
               </motion.div>
             ))}
           </div>
 
           {/* Phone Number */}
-          <div className="hidden md:block">
+          <motion.div
+            className="hidden md:block"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <span
-              className={`text-xl font-semibold transition-colors opacity-50 cursor-not-allowed pointer-events-none ${
-                isScrolled ? 'text-warm-400' : 'text-white'
+              onClick={handleDisabledClick}
+              className={`text-xl font-semibold transition-colors pointer-events-auto ${
+                isScrolled ? 'text-warm-400 hover:text-warm-300' : 'text-white hover:text-warm-300'
               }`}
             >
               079 337 82 59
             </span>
-          </div>
+          </motion.div>
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 transition-colors opacity-50 cursor-not-allowed pointer-events-none ${
+            className={`md:hidden p-2 transition-colors ${
               isScrolled ? 'text-white' : 'text-white'
             }`}
             onClick={handleDisabledClick}
             aria-label="Menu"
-            disabled
           >
             <motion.svg
               className="w-6 h-6"
